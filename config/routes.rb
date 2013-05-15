@@ -1,4 +1,10 @@
 ChineseAudioQuiz::Application.routes.draw do
+  root :to => 'guesses#new'
+
+  namespace :admin do
+    resources :characters
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
