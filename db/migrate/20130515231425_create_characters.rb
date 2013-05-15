@@ -4,6 +4,7 @@ class CreateCharacters < ActiveRecord::Migration
       t.string :hanzi
       t.string :zhuyin_fuhao
       t.string :pinyin
+      t.string :english
       t.string :audio_filename
       t.timestamps
     end
