@@ -1,13 +1,33 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
  *= require_self
- *= require_tree .
  */
+
+* {
+    margin: 0; padding: 0; outline: 0;
+}
+html {
+    text-align: center;
+    min-height: 100%;
+}
+body {
+    width: 900px; margin: 100px auto 0; min-height: 100%;
+}
+button {
+    cursor: pointer; text-indent: -1000px;
+    background: transparent url('/assets/button-play.png') center top no-repeat;
+    border: 0; width: 211px; height: 209px; margin-bottom: 50px;
+    overflow: hidden;
+}
+    button:hover {
+        background-position: center -210px;
+    }
+input[type="text"] {
+    font-size: 45px;
+    background: transparent url('/assets/icon-write.png?1') 10px -88px no-repeat;
+    padding: 10px 15px 10px 65px; max-width: 280px; border: 5px solid #dbdbdb; -webkit-border-radius: 12px; -moz-border-radius: 12px; border-radius: 12px;
+}
+    input[type="text"]:focus {
+        color: #3e6802;
+        background-position: 10px 12px;
+        border-color: #95e129;
+    }
