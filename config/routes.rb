@@ -1,6 +1,8 @@
 ChineseAudioQuiz::Application.routes.draw do
   root :to => 'guesses#new'
 
+  resources :guesses, :only => [:new, :create]
+
   namespace :admin do
     root :to => 'characters#index'
     resources :characters

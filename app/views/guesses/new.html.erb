@@ -1,5 +1,11 @@
-<audio src="/uploads/Best-Piano-Duet-Ever.mp3" id="word"><p>Your browser does not support HTML5 audio</p></audio>
+<audio src="<%= @character.audio %>" id="word">
+    <p>Your browser does not support HTML5 audio</p>
+</audio>
 <button id="play">Play the Audio</button>
-<form>
-    <input type="text" />
-</form>
+<%= form_for @guess do |f| %>
+    <%= f.text_field :hanzi %>
+    <%= f.hidden_field :character_id %>
+<% end %>
+<% if flash[:notice] %>
+	<p class="<%= @status %>"><%= flash[:notice] %></p>
+<% end %>

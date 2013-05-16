@@ -17,14 +17,17 @@ ActiveRecord::Schema.define(:version => 20130515235517) do
     t.string   "hanzi"
     t.string   "zhuyin_fuhao"
     t.string   "pinyin"
-    t.string   "audio_filename"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.string   "english"
+    t.string   "audio"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "guesses", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "character_id"
+    t.string   "hanzi"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end

@@ -10,6 +10,7 @@ html {
     min-height: 100%;
 }
 body {
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
     width: 900px; margin: 100px auto 0; min-height: 100%;
 }
 button {
@@ -22,12 +23,22 @@ button {
         background-position: center -210px;
     }
 input[type="text"] {
-    font-size: 45px;
+    font-size: 45px; color: #999;
     background: transparent url('/assets/icon-write.png?1') 10px -88px no-repeat;
-    padding: 10px 15px 10px 65px; max-width: 280px; border: 5px solid #dbdbdb; -webkit-border-radius: 12px; -moz-border-radius: 12px; border-radius: 12px;
+    padding: 10px 15px 10px 65px; max-width: 280px; margin-bottom: 20px; border: 5px solid #dbdbdb; -webkit-border-radius: 12px; -moz-border-radius: 12px; border-radius: 12px;
 }
     input[type="text"]:focus {
         color: #3e6802;
         background-position: 10px 12px;
         border-color: #95e129;
     }
+
+.wrong, .correct {
+	font-size: 16px; font-weight: 600;
+}
+	.wrong {
+		color: #e74412;
+	}
+	.correct {
+		color: #95e129;
+	}

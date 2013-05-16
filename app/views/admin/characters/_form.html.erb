@@ -1,0 +1,27 @@
+<%= form_for [:admin, @character], :html => {:multipart => true} do |f| %>
+  <div class="field">
+    <%= f.label :hanzi %>
+    <%= f.text_field :hanzi %>
+  </div>
+
+  <div class="field">
+    <%= f.label :audio %>
+    <%= f.file_field :audio %>
+    <%= f.hidden_field :audio_cache %>
+	<span class="audio"><%= @character.audio %></span>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+	<%= link_to 'Cancel', admin_root_path %>
+  </div>
+
+	<% if @character.errors.any? %>
+		<div class="errors"><%= @character.errors.full_messages.join(', ') %></div>
+	<% end %>
+	<% if flash[:notice] %>
+		<div class="notice">
+			<%= flash[:notice] %>
+		</div>
+	<% end %>
+<% end %>

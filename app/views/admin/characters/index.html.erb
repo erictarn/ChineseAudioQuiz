@@ -1,1 +1,13 @@
-admin index.html.erb
+<ul>
+<% @characters.each do |c| %>
+	<li>
+		<%= link_to c.hanzi, edit_admin_character_path(c) %>
+		<audio src="<%= c.audio %>" id="word_<%= c.id %>">
+			<p>Your browser does not support HTML5 audio</p>
+		</audio>
+		<button data-id="<%= c.id %>">Play the clip</button>
+	</li>
+<% end %>
+</ul>
+
+<%= link_to '+ New Character', new_admin_character_path, :class => 'new_button' %>
