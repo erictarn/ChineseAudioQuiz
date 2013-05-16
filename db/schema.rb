@@ -11,15 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130515231425) do
+ActiveRecord::Schema.define(:version => 20130515235517) do
 
   create_table "characters", :force => true do |t|
     t.string   "hanzi"
     t.string   "zhuyin_fuhao"
     t.string   "pinyin"
-    t.string   "audio_filename"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.string   "english"
+    t.string   "audio"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "guesses", :force => true do |t|
+    t.integer  "character_id"
+    t.string   "hanzi"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end

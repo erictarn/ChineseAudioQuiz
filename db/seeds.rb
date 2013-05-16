@@ -9,7 +9,18 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-Character.create(:hanzi => "媽", :zhuyin_fuhao => "ㄇㄚ", :pinyin => "ma", :english => "Mom")
-Character.create(:hanzi => "爸", :zhuyin_fuhao => "ㄅㄚˋ", :pinyin => "ba", :english => "Dad")
-Character.create(:hanzi => "你", :zhuyin_fuhao => "ㄋㄧˇ", :pinyin => "ni", :english => "You")
-Character.create(:hanzi => "十", :zhuyin_fuhao => "ㄕˊ", :pinyin => "shi", :enlgish => "Ten") 
+c = Character.create(:hanzi => "媽", :zhuyin_fuhao => "ㄇㄚ", :pinyin => "ma", :english => "Mom")
+c.audio = File.open("#{ Rails.root }/public/ma.m4a")
+c.save
+
+c = Character.create(:hanzi => "爸", :zhuyin_fuhao => "ㄅㄚˋ", :pinyin => "ba", :english => "Dad")
+c.audio = File.open("#{ Rails.root }/public/ba.m4a")
+c.save
+
+c = Character.create(:hanzi => "你", :zhuyin_fuhao => "ㄋㄧˇ", :pinyin => "ni", :english => "You")
+c.audio = File.open("#{ Rails.root }/public/ni.m4a")
+c.save
+
+c = Character.create(:hanzi => "十", :zhuyin_fuhao => "ㄕˊ", :pinyin => "shi", :english => "Ten")
+c.audio = File.open("#{ Rails.root }/public/shi.m4a")
+c.save

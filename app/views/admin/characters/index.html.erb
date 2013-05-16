@@ -1,1 +1,4 @@
-admin index.html.erb
+<% @characters.each do |c| %>
+  <%= c.hanzi %>
+  <%= c.audio %>
+<% end %>
