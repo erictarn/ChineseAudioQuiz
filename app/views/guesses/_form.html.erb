@@ -1,0 +1,12 @@
+<audio src="<%= @character.audio %>" id="word">
+    <p>Your browser does not support HTML5 audio</p>
+</audio>
+<button id="play">Play the Audio</button>
+<%= form_for @guess do |f| %>
+    <%= f.text_field :hanzi %>
+    <%= f.hidden_field :character_id %>
+<% end %>
+<p><%= link_to "Skip", character_path(@character) %></a></p>
+<% if flash[:notice] %>
+  <p class="<%= @status %>"><%= flash[:notice] %></p>
+<% end %>

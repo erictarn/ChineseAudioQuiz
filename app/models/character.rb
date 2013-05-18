@@ -4,4 +4,8 @@ class Character < ActiveRecord::Base
   mount_uploader :audio, AudioUploader
   
   validates :hanzi, :presence => true
+
+  def self.next_quiz
+    self.first(:order => "RAND()")
+  end
 end

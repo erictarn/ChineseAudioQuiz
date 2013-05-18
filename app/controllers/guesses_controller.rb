@@ -1,6 +1,6 @@
 class GuessesController < ApplicationController
   def new
-    @character = Character.first(:order => "RAND()")
+    @character = Character.next_quiz
     @guess = Guess.new(:character_id => @character.id)
   end
 
