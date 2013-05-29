@@ -16,8 +16,8 @@ body {
 button {
     cursor: pointer; text-indent: -1000px;
     background: transparent url('/assets/button-play.png') center top no-repeat;
-    border: 0; width: 211px; height: 209px; margin-bottom: 50px;
-    overflow: hidden;
+    border: 0; width: 211px; height: 209px; margin: 0 auto 50px;
+    overflow: hidden; display: block;
 }
     button:hover {
         background-position: center -210px;
@@ -41,4 +41,11 @@ input[type="text"] {
 	}
 	.correct {
 		color: #95e129;
+	}
+	
+a {
+	text-transform: uppercase; font-size: 14px; text-decoration: none; color: #95e129;
+}
+	a:hover {
+		color: #84c625;
 	}
