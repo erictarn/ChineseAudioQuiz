@@ -55,7 +55,7 @@ char_array = [
 char_array.each do |c|
   c = Character.create(:hanzi => c[:hanzi], :zhuyin_fuhao => c[:zhuyin_fuhao], :pinyin => c[:pinyin], :english => c[:english])
   c.save
-  c.audio = File.open("#{Rails.root}/public/#{c.id}.m4a")
+  c.audio = File.open("#{Rails.root}/tmp/#{c.id}.m4a")
   c.save
 end
 
