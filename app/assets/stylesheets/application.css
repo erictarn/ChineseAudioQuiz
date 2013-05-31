@@ -42,9 +42,11 @@ input[type="text"] {
 	.correct {
 		color: #95e129;
 	}
+
+p { margin: 25px 0; }
 	
 a {
-	text-transform: uppercase; font-size: 14px; text-decoration: none; color: #95e129;
+	text-transform: uppercase; font-size: 20px; text-decoration: none; color: #95e129;
 }
 	a:hover {
 		color: #84c625;

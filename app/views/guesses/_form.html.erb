@@ -2,11 +2,11 @@
     <p>Your browser does not support HTML5 audio</p>
 </audio>
 <button id="play">Play the Audio</button>
-<%= form_for @guess do |f| %>
+<%= form_for @guess, :url => '/guesses', :method => :post do |f| %>
     <%= f.text_field :hanzi %>
     <%= f.hidden_field :character_id %>
 <% end %>
-<p><%= link_to "Skip", character_path(@character) %></a></p>
+<p><%= link_to("Skip", guesses_path(:skip => true, "guess[character_id]" => @guess.character_id), :method => :post) %></p>
 <% if flash[:notice] %>
-  <p class="<%= @status %>"><%= flash[:notice] %></p>
+  <p class="<%= flash[:notice] == 'Good job!' ? 'correct' : 'wrong' %>"><%= flash[:notice] %></p>
 <% end %>

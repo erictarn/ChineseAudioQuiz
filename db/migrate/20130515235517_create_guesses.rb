@@ -3,6 +3,7 @@ class CreateGuesses < ActiveRecord::Migration
     create_table :guesses do |t|
       t.references :character
       t.string :hanzi
+      t.boolean :correct
       t.timestamps
     end
   end

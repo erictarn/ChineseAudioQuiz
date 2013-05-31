@@ -10,13 +10,19 @@ class GuessesController < ApplicationController
 
     respond_to do |format|
       if @guess.hanzi == @guess.character.hanzi
-        @status = "correct"
+        @guess.correct = true
+        @guess.save
         format.html { redirect_to new_guess_url, notice: 'Good job!' }
       else
-        @status = "wrong"
+        @guess.correct = false
+        @guess.save
         format.html {
-          flash[:notice] = 'Incorrect.'
-          render action: "new"
+          if params[:skip]
+            redirect_to character_path(@character)
+          else
+            flash[:notice] = 'Incorrect.'
+            render action: "new"
+          end
         }
       end
     end

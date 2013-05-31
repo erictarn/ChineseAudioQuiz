@@ -58,3 +58,5 @@ char_array.each do |c|
   c.audio = File.open("#{Rails.root}/public/#{c.id}.m4a")
   c.save
 end
+
+User.create
