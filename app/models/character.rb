@@ -17,7 +17,6 @@ class Character < ActiveRecord::Base
         end
       end
     end
-    puts arr
     Character.find(arr.sample)
   end
 end
